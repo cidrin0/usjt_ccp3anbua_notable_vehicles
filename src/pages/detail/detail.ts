@@ -42,8 +42,11 @@ export class DetailPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailPage');
   }
+
   ionViewWillLeave (){
     if (this.newVehicleFlag)
+      if(this.vehicle.nome != "" && this.vehicle.modelo != "" &&
+          this.vehicle.cor != "" && this.vehicle.placa != "")
       this.vehicleService.addVehicle(this.vehicle);
     else if (!this.deleteVehicleFlag){
       this.vehicleService.editVehicle(this.vehicle);

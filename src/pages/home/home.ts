@@ -11,7 +11,10 @@ export class HomePage {
   vehicles;
 
   constructor(public navCtrl: NavController, public vehicleService: VehicleService) {
-    this.vehicles = this.vehicleService.vehicles;
+  }
+  
+  ngOnInit (){
+    this.vehicles = this.vehicleService.fetchVehicles();
   }
 
   onCardClick (vehicle){

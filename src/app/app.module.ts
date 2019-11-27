@@ -12,14 +12,14 @@ import {AngularFireModule} from 'angularfire2'
 import {AngularFireDatabaseModule}  from 'angularfire2/database'
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyB_NHVdcNFLQgVPgVp6QvqnNOCLqdkS5KA",
-  authDomain: "usjt-ccp3bnbua-notable-notes.firebaseapp.com",
-  databaseURL: "https://usjt-ccp3bnbua-notable-notes.firebaseio.com",
-  projectId: "usjt-ccp3bnbua-notable-notes",
-  storageBucket: "usjt-ccp3bnbua-notable-notes.appspot.com",
-  messagingSenderId: "626282068543",
-  appId: "1:626282068543:web:43617f2ecfd84df72bd68a",
-  measurementId: "G-5W07816X7D"
+  apiKey: "AIzaSyCjr6lIhgVj8L_F4jUnCq0G2wdDdZqfgQM",
+    authDomain: "usjt-project-notable-vehicles.firebaseapp.com",
+    databaseURL: "https://usjt-project-notable-vehicles.firebaseio.com",
+    projectId: "usjt-project-notable-vehicles",
+    storageBucket: "usjt-project-notable-vehicles.appspot.com",
+    messagingSenderId: "637207667672",
+    appId: "1:637207667672:web:860eb94bd11ea87562c8ad",
+    measurementId: "G-R5JHDSGCM4"
 };
 
 @NgModule({

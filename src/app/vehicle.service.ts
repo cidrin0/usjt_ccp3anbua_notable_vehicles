@@ -1,28 +1,42 @@
 import { Injectable } from "@angular/core";
+import {AngularFireDatabase} from 'angularfire2/database'
 
 @Injectable()
 export  class VehicleService {
 
-  constructor (){
+  constructor (private db: AngularFireDatabase){
   }
   
-  vehicles = [
-    {"nome" : "carro", "modelo" : "AE12", "cor" : "preto", "placa" : "ACGF-123"},
-    {"nome" : "MOTO", "modelo" : "AB1232", "cor" : "branco", "placa" : "CGDS-103"},
-  ]
+  fetchVehicles(){
+    return this.db.list("/vehicles/");
+  }
 
   addVehicle(vehicle){
-    this.vehicles.push(vehicle);
+    this.db.list("/vehicles/").push({
+      nome: vehicle.nome,
+      modelo: vehicle.modelo,
+      cor: vehicle.cor,
+      placa : vehicle.placa
+      });
   }
 
   editVehicle(vehicle){
-    
+    this.db.object("/vehicles/"+vehicle.$key).update({
+      nome: vehicle.nome,
+      modelo: vehicle.modelo,
+      cor: vehicle.cor,
+      placa : vehicle.placa
+      });
   }
 
   removeVehicle(vehicle){
-    let index = this.vehicles.indexOf(vehicle);
-    if (index > -1){
-      this.vehicles.splice(index, 1);
-    }
+    this.db.object("/vehicles/"+vehicle.$key).remove()
+      .then(
+        x => console.log ("VEhicle deleted successfully")
+      ).
+      catch( error => {
+        console.log ("Could not delete vehicle");
+        alert ("Could not delete vehicle")
+      });
   }
 }

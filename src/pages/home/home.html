@@ -8,7 +8,7 @@
 
 <ion-content padding>
   
-  <ion-card *ngFor="let vehicle of vehicles" (click)="onCardClick(vehicle)">
+  <ion-card *ngFor="let vehicle of vehicles | async" (click)="onCardClick(vehicle)">
     <ion-card-content>
       <ion-card-title>
           {{vehicle.nome}}
