@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Notable Vehicles
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-card *ngFor="let vehicle of vehicles" (click)="onCardClick(vehicle)">
+    <ion-card-content>
+      <ion-card-title>
+          {{vehicle.nome}}
+      </ion-card-title>
+      <p>{{vehicle.modelo}}</p>
+      <p>{{vehicle.cor}}</p>
+      <p>{{vehicle.placa}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab end bottom>
+    <button ion-fab color="primary" (click)="onAddClick()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
